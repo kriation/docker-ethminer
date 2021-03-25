@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.2.0-devel AS build
+FROM nvidia/cuda:11.2.2-devel AS build
 ARG DEBIAN_FRONTEND=noninteractive
 ARG ETHMINER_TAG=v0.19.0
 RUN apt-get -q -y update && \
@@ -14,6 +14,6 @@ WORKDIR /tmp/ethminer/build
 RUN cmake .. -DETHASHCUDA=ON -DETHASHCL=OFF && \
     cmake --build .
 
-FROM nvidia/cuda:11.2.0-runtime
+FROM nvidia/cuda:11.2.2-runtime
 COPY --from=build /tmp/ethminer/build/ethminer /opt/ethminer
 ENTRYPOINT ["/opt/ethminer/ethminer"]
