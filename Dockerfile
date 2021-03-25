@@ -2,7 +2,6 @@ FROM nvidia/cuda:11.2.2-devel AS build
 ARG DEBIAN_FRONTEND=noninteractive
 ARG ETHMINER_COMMIT=ce52c74021b6fbaaddea3c3c52f64f24e39ea3e9
 RUN apt-get -q -y update && \
-    apt-get -q -y upgrade && \
     apt-get -q -y install \
     cmake \
     git \
