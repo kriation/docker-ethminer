@@ -4,6 +4,13 @@ master branch at build time. I used the guidance provided in the
 [build.md](https://github.com/ethereum-mining/ethminer/blob/master/docs/BUILD.md)
 of the repository to put this image together.
 
+## Tip Jar
+If you're using this container image, tips in <a
+href="ethereum:%30%78%41%65%32%36%43%64%31%35%37%33%37%34%35%32%33%36%38%30%37%45%36%37%63%45%33%62%65%33%34%43%61%34%32%32%36%66%34%63%46%33%3f%76%61%6c%75%65%3d%31%65%31%38">eth</a>
+are appreciated! :bowtie:
+
+
+## Overview
 To minimize the complexity of pulling in the required dependencies and
 minimizing the size of the image, I use the
 nvidia/cuda devel image to build the ethminer binary. In the second
