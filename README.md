@@ -6,12 +6,9 @@ of the repository to put this image together.
 
 To minimize the complexity of pulling in the required dependencies and
 minimizing the size of the image, I use the
-nvidia/cuda:11-2.0-devel image to build the ethminer binary. In the second
+nvidia/cuda devel image to build the ethminer binary. In the second
 stage, I copy the build artifacts to a new image dependent on
-nvidia/cuda:11.2.0-runtime.
-
-The final image size is ~2.03GB compared to ~4.71GB when using the nvidia
-development image.
+nvidia/cuda runtime.
 
 The entrypoint for the final image is /opt/ethminer/ethminer.
 
