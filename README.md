@@ -32,3 +32,15 @@ configured properly on the container host. The
 [documentation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/user-guide.html)
 from NVIDIA on setting the toolkit up is straightforward.
 
+## Build
+For those interested in building a custom image that isn't available in Docker
+Hub, you can pass a build argument of CUDA_VERSION set to any of the tags
+listed in the [CUDA Supported Tags](https://gitlab.com/nvidia/container-images/cuda/blob/master/doc/supported-tags.md) documentation.
+
+An example is below:
+
+```
+$ docker build --build-arg CUDA_VERSION=10.0 -t kriation/ethminer:10.0 .
+```
+
+The resulting image will be based off of the CUDA 10.0 base.
