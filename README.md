@@ -7,6 +7,7 @@ of the repository to put this image together.
 ## Tip Jar
 If you're using this container image, tips in eth are appreciated! :bowtie:
 **0xAe26Cd1573745236807E67cE3be34Ca4226f4cF3**
+
 ![eth address QR code](eth.png)
 
 ## Overview
