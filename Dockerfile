@@ -1,7 +1,7 @@
 ARG CUDA_VERSION=11.2.2
-ARG DEBIAN_FRONTEND=noninteractive
 ARG ETHMINER_COMMIT=ce52c74021b6fbaaddea3c3c52f64f24e39ea3e9
 FROM nvidia/cuda:$CUDA_VERSION-devel AS build
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q -y update && \
     apt-get -q -y install \
     cmake \
