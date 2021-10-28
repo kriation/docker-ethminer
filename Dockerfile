@@ -1,6 +1,6 @@
 ARG CUDA_VERSION=11.4.2
 ARG ETHMINER_COMMIT=ce52c74021b6fbaaddea3c3c52f64f24e39ea3e9
-FROM nvidia/cuda:$CUDA_VERSION-devel AS build
+FROM nvidia/cuda:$CUDA_VERSION-devel-ubuntu20.04 AS build
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q -y update && \
     apt-get -q -y install \
@@ -14,6 +14,6 @@ WORKDIR /tmp/ethminer/build
 RUN cmake .. -DETHASHCUDA=ON -DETHASHCL=OFF && \
     cmake --build .
 
-FROM nvidia/cuda:$CUDA_VERSION-runtime
+FROM nvidia/cuda:$CUDA_VERSION-runtime-ubuntu20.04
 COPY --from=build /tmp/ethminer/build/ethminer /opt/ethminer
 ENTRYPOINT ["/opt/ethminer/ethminer"]
